@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
+import App from "./pages/App/index.tsx";
 import { I18nextProvider } from "react-i18next";
 import i18next from "i18next";
 import global_en from "./translations/en/global.json";

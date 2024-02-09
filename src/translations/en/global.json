@@ -1,3 +1,5 @@
 {
-  "saludo": "hello world"
+  "layout":{
+    "discount-bar": "Get 50% off on selected items | Shop now"
+  }
 }

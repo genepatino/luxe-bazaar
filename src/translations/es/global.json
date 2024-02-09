@@ -1,3 +1,5 @@
 {
-  "saludo": "hola mundo"
+  "layout": {
+    "discount-bar": "Obtenga 50% de descuento en artículos seleccionados | Compra ahora"
+  }
 }

@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 
-function App() {
+function Home() {
   const [t] = useTranslation("global");
   return <p>{t("saludo")}</p>;
 }
 
-export default App;
+export { Home };
