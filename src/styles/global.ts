@@ -2,13 +2,21 @@ import { createGlobalStyle } from "styled-components";
 
 export const colors = {
   green: "#3a5a40",
+  lightgray: "#e5e5e573"
 };
+
+export const fonts = {
+  primary: 'Space Grotesk'
+}
 
 export const GlobalStyle = createGlobalStyle`
   body{
-    margin: 0;
-    padding: 0;
-    box-sizing:border-box;
+    /* display: flex;
+    place-content: center; */
+    max-width: 1400px;
+    height: 100dvh;
+    margin: 0 auto;
+    font-family: ${fonts.primary}, sans-serif;
   };
 
   html{
