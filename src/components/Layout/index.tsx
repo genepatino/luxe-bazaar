@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
-import { DiscountBar } from "./DiscountBar";
-import { Navbar } from "./Navbar";
+import { DiscountBar } from "../DiscountBar/index";
+import { Navbar } from "../Navbar/index";
 import { LayoutContainer } from "./styled";
 
 type Props = {

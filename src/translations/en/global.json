@@ -1,5 +1,15 @@
 {
   "layout":{
-    "discount-bar": "Get 50% off on selected items | Shop now"
+    "discount-bar": "Get 50% off on selected items | Shop now",
+    "navbar": {
+      "clothes": "Clothes",
+      "shoes": "Shoes",
+      "jewelry": "Jewelry",
+      "furniture": "Furniture",
+      "electronics": "Electronics",
+      "miscellaneous": "Miscellaneous",
+      "searchProduct": "Search Product",
+      "shopCart": "ShopCart"
+    }
   }
 }

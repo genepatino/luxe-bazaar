@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../../styles/global";
+import { colors } from "../../styles/global";
 
 export const DiscountBarContainer = styled.div`
   background-color: ${colors.green};

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../../styles/global";
+import { colors, fonts } from "../../styles/global";
 
 export const NavbarContainer = styled.nav`
   margin-top: 4px;
@@ -56,15 +56,14 @@ export const NavbarContainer = styled.nav`
   }
 
   .rigth {
-    gap: 20px;
-    position: relative;
+    gap: 40px;
     justify-content: end;
     cursor: pointer;
 
     .search-icon {
       position: absolute;
-      top: 14px;
-      right: 82px;
+      top: 6px;
+      right: -6px;
       font-size: 2rem;
       color: gray;
     }
@@ -73,6 +72,7 @@ export const NavbarContainer = styled.nav`
       display: flex;
       font-size: 1.6rem;
       gap: 2px;
+
       &:hover {
         text-decoration: underline;
         text-underline-offset: 4px;
@@ -82,11 +82,16 @@ export const NavbarContainer = styled.nav`
         font-size: 1.8rem;
       }
     }
+
+    form {
+      width: 100%;
+      position: relative;
+    }
   }
 `;
 
 export const SearchInput = styled.input`
-  width: 80%;
+  width: 100%;
   height: 30px;
   padding-left: 14px;
   background: ${colors.lightgray};
@@ -94,6 +99,10 @@ export const SearchInput = styled.input`
   border-radius: 32px;
   font-size: 1.4rem;
   transition: 0.2s;
+
+  &::placeholder {
+    font-family: ${fonts.primary};
+  }
 
   &:focus {
     box-shadow: 0 0 10px 1400px rgba(0, 0, 0, 0.3);

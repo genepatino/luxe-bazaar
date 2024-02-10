@@ -1,20 +1,22 @@
 import { NavLink, Link } from "react-router-dom";
-
-import Logo from "../../../images/LB.png";
+import Logo from "../../images/LB.png";
 import { FiSearch } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { NavbarContainer, SearchInput } from "./styled";
-
-const leftNavbarList = [
-  { to: "/clothes", name: "Clothes" },
-  { to: "/shoes", name: "Shoes" },
-  { to: "/jewelry", name: "Jewelry" },
-  { to: "/furniture", name: "Furniture" },
-  { to: "/electronics", name: "Electronics" },
-  { to: "/miscellaneous", name: "Miscellaneous" },
-];
+import { useTranslation } from "react-i18next";
 
 function Navbar() {
+  const [t] = useTranslation("global");
+
+  const leftNavbarList = [
+    { to: "/clothes", name: t("layout.navbar.clothes") },
+    { to: "/shoes", name: t("layout.navbar.shoes") },
+    { to: "/jewelry", name: t("layout.navbar.jewelry") },
+    { to: "/furniture", name: t("layout.navbar.furniture") },
+    { to: "/electronics", name: t("layout.navbar.electronics") },
+    { to: "/miscellaneous", name: t("layout.navbar.miscellaneous") },
+  ];
+
   return (
     <NavbarContainer>
       <div className="container">
@@ -36,14 +38,16 @@ function Navbar() {
           ))}
         </ul>
       </div>
-      <form className="container rigth">
-        <SearchInput placeholder="Search product" />
-        <FiSearch className="search-icon" />
+      <div className="container rigth">
+        <form>
+          <SearchInput placeholder="Search product" />
+          <FiSearch className="search-icon" />
+        </form>
         <div>
           <IoCartOutline className="cart-icon" />
-          <span>Cart</span>
+          <span>{t("layout.navbar.shopCart")}</span>
         </div>
-      </form>
+      </div>
     </NavbarContainer>
   );
 }

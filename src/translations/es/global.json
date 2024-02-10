@@ -1,5 +1,15 @@
 {
   "layout": {
-    "discount-bar": "Obtenga 50% de descuento en artículos seleccionados | Compra ahora"
+    "discount-bar": "Obtenga 50% de descuento en artículos seleccionados | Compra ahora",
+    "navbar": {
+      "clothes": "Ropa",
+      "shoes": "Zapatos",
+      "jewelry": "Joyas",
+      "furniture": "Muebles",
+      "electronics": "Electrónicos",
+      "miscellaneous": "Varios",
+      "searchProduct": "Buscar producto",
+      "shopCart": "Carrito"
+    }
   }
 }

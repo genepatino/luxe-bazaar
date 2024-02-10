@@ -8,7 +8,7 @@ import global_es from "./translations/es/global.json";
 
 i18next.init({
   interpolation: { escapeValue: false },
-  lng: "es",
+  lng: "en",
   resources: {
     es: {
       global: global_es,
