@@ -2,14 +2,22 @@
   "layout":{
     "discount-bar": "Get 50% off on selected items | Shop now",
     "navbar": {
-      "clothes": "Clothes",
-      "shoes": "Shoes",
-      "jewelry": "Jewelry",
-      "furniture": "Furniture",
+      "groceries": "Groceries",
+      "fragrances": "Fragrances",
+      "home": "Home",
+      "jewellery": "Jewellery",
+      "skincare": "Skincare",
+      "laptops": "Laptops",
       "electronics": "Electronics",
-      "miscellaneous": "Miscellaneous",
+      "smartphones": "Smartphones",
       "searchProduct": "Search Product",
       "shopCart": "ShopCart"
     }
+  },
+  "home":{
+    "discount": "Grab Upto 50% Off On",
+    "article": "Selected Article",
+    "buyNow": "Buy Now",
+    "add": "Add to Cart"
   }
 }

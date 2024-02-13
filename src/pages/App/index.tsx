@@ -7,6 +7,13 @@ import { GlobalStyle } from "../../styles/global";
 const Routes = () => {
   const routes = useRoutes([
     { path: "/", element: <Home /> },
+    { path: "/:category", element: <Home /> },
+    /* { path: "/clothes", element: <Clothes /> },
+    { path: "/shoes", element: <Home /> },
+    { path: "/jewelry", element: <Home /> },
+    { path: "/furniture", element: <Home /> },
+    { path: "/electronics", element: <Home /> },
+    { path: "/miscellaneous", element: <Home /> }, */
     { path: "/*", element: <NotFound /> },
   ]);
   return routes;

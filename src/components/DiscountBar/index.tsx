@@ -1,16 +1,24 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { DiscountBarContainer } from "./styled";
 import { PiPhoneIncomingThin } from "react-icons/pi";
 import Switch from "react-switch";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { changeEsToEn } from "../../redux/slices/productsDataSlices";
 
 function DiscountBar() {
-  const [t] = useTranslation("global");
+  const [t, i18n] = useTranslation("global");
+  const translation = useAppSelector(
+    (state) => state.ProductsData.esLangActive
+  );
+  const dispatch = useAppDispatch();
 
-  const [checked, setChecked] = useState(false);
-
-  const handleChange = (newChecked) => {
-    setChecked(newChecked);
+  const handleChange = () => {
+    dispatch(changeEsToEn());
+    if (translation) {
+      i18n.changeLanguage("en");
+    } else {
+      i18n.changeLanguage("es");
+    }
   };
 
   return (
@@ -22,7 +30,7 @@ function DiscountBar() {
       <p>{t("layout.discount-bar")}</p>
       <Switch
         onChange={handleChange}
-        checked={checked}
+        checked={translation}
         onColor="#bcc3cc"
         offColor="#bcc3cc"
         offHandleColor="#54835d"
@@ -30,8 +38,8 @@ function DiscountBar() {
         checkedIcon={<span className="iconLanguage iconLanguageES">ES</span>}
         uncheckedIcon={<span className="iconLanguage iconLanguageEN">EN</span>}
         activeBoxShadow="0 0 2px 3px #add1b4"
-        width={42}
-        height={20}
+        width={43}
+        height={21}
       />
     </DiscountBarContainer>
   );

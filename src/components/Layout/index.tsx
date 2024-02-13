@@ -14,7 +14,7 @@ function Layout({ children }: Props) {
     <LayoutContainer>
       <DiscountBar />
       <Navbar />
-      <div>{children}</div>
+      {children}
     </LayoutContainer>
   );
 }

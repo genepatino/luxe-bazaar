@@ -63,7 +63,7 @@ export const NavbarContainer = styled.nav`
     .search-icon {
       position: absolute;
       top: 6px;
-      right: -6px;
+      right: -10px;
       font-size: 2rem;
       color: gray;
     }
@@ -92,11 +92,11 @@ export const NavbarContainer = styled.nav`
 
 export const SearchInput = styled.input`
   width: 100%;
-  height: 30px;
-  padding-left: 14px;
+  height: 32px;
+  padding-left: 20px;
   background: ${colors.lightgray};
   border: none;
-  border-radius: 32px;
+  border-radius: 30px;
   font-size: 1.4rem;
   transition: 0.2s;
 
@@ -105,7 +105,6 @@ export const SearchInput = styled.input`
   }
 
   &:focus {
-    box-shadow: 0 0 10px 1400px rgba(0, 0, 0, 0.3);
     outline: none;
   }
 `;

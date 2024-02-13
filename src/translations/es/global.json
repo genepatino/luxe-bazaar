@@ -2,14 +2,21 @@
   "layout": {
     "discount-bar": "Obtenga 50% de descuento en artículos seleccionados | Compra ahora",
     "navbar": {
-      "clothes": "Ropa",
-      "shoes": "Zapatos",
-      "jewelry": "Joyas",
-      "furniture": "Muebles",
-      "electronics": "Electrónicos",
-      "miscellaneous": "Varios",
-      "searchProduct": "Buscar producto",
+      "groceries": "Comestibles",
+      "fragrances": "Fragancias",
+      "home": "Hogar",
+      "jewellery": "Joyas",
+      "skincare": "Cuidado de la piel",
+      "laptops": "Portátiles",
+      "smartphones": "Celulares",
+      "searchProduct": "Búscar producto",
       "shopCart": "Carrito"
     }
+  },
+  "home":{
+    "discount": "Obtenga hasta un 50% de descuento en",
+    "article": "Artículo seleccionado",
+    "buyNow": "Comprar",
+    "add": "Agregar"
   }
 }
