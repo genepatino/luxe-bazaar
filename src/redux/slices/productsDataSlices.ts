@@ -6,10 +6,22 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Define the initial state using that type
 const initialState = {
-  products: [],
+  products: [
+    {
+      id: 0,
+      title: "",
+      description: "",
+      price: "",
+      category: "",
+      rating: 0,
+      stock: 0,
+      brand: "",
+      images: [],
+    }],
   esLangActive: false,
   category: "",
-  productByName: "",
+  searchProduct: "",
+  shoppingCartProducts: [],
 }
 
 export const ProductsDataSlice = createSlice({
@@ -22,16 +34,19 @@ export const ProductsDataSlice = createSlice({
     changeEsToEn: (state) => {
       state.esLangActive = !state.esLangActive
     },
-    getProductsByCategory: (state, action) => {
+    setProductsByCategory: (state, action) => {
       state.category = action.payload
     },
-    nameOfProduct: (state, action) => {
-      state.productByName = action.payload
+    setSearchProduct: (state, action) => {
+      state.searchProduct = action.payload
+    },
+    setShoppingCartProducts: (state, action) => {
+      state.shoppingCartProducts.push(action.payload)
     },
   },
 })
 
 
 
-export const { saveProducts, changeEsToEn, getProductsByCategory, nameOfProduct } = ProductsDataSlice.actions
+export const { saveProducts, changeEsToEn, setProductsByCategory, setSearchProduct, setShoppingCartProducts } = ProductsDataSlice.actions
 export default ProductsDataSlice.reducer

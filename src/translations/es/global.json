@@ -18,5 +18,13 @@
     "article": "Artículo seleccionado",
     "buyNow": "Comprar",
     "add": "Agregar"
+  },
+  "productDetails":{
+    "discount": "o 99.99/mes",
+    "suggested": "Pagos sugeridos con financiación especial a 6 meses",
+    "free": "Entrega Gratis",
+    "return": "Entrega de devolución",
+    "delivery": "Ingrese su código postal para disponibilidad de entrega",
+    "return-delivery": "Devoluciones con entrega gratuita en 30 días"
   }
 }

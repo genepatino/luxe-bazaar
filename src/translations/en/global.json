@@ -19,5 +19,13 @@
     "article": "Selected Article",
     "buyNow": "Buy Now",
     "add": "Add to Cart"
+  },
+  "productDetails":{
+    "discount": "or 99.99/month",
+    "suggested": "Suggested payments with special 6-month financing",
+    "free": "Free Delivery",
+    "return": "Return Delivery",
+    "delivery": "Enter your postal code for Delivery Availability",
+    "return-delivery": "Free 30 days Delivery Returns"
   }
 }

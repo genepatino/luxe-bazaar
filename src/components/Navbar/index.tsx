@@ -6,13 +6,13 @@ import { NavbarContainer, SearchInput } from "./styled";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
-  getProductsByCategory,
-  nameOfProduct,
+  setProductsByCategory,
+  setSearchProduct,
 } from "../../redux/slices/productsDataSlices";
 
 function Navbar() {
   const [t] = useTranslation("global");
-  const product = useAppSelector((state) => state.ProductsData.productByName);
+  const product = useAppSelector((state) => state.ProductsData.searchProduct);
   const dispatch = useAppDispatch();
 
   const leftNavbarList = [
@@ -29,7 +29,7 @@ function Navbar() {
     <NavbarContainer>
       <div className="container">
         <figure>
-          <Link to="/" onClick={() => dispatch(getProductsByCategory("/"))}>
+          <Link to="/" onClick={() => dispatch(setProductsByCategory("/"))}>
             <img src={Logo} alt="logo luxe bazaar" />
           </Link>
         </figure>
@@ -40,7 +40,7 @@ function Navbar() {
                 to={item.to}
                 className={({ isActive }) => (isActive ? "active" : undefined)}
                 onClick={() =>
-                  dispatch(getProductsByCategory(`/category${item.to}`))
+                  dispatch(setProductsByCategory(`/category${item.to}`))
                 }
               >
                 {item.name}
@@ -55,13 +55,13 @@ function Navbar() {
             type="text"
             placeholder={t("layout.navbar.searchProduct")}
             value={product}
-            onChange={(e) => dispatch(nameOfProduct(e.target.value))}
+            onChange={(e) => dispatch(setSearchProduct(e.target.value))}
           />
           <FiSearch className="search-icon" />
         </form>
         <div>
-          <IoCartOutline className="cart-icon" />
           <span>{t("layout.navbar.shopCart")}</span>
+          <IoCartOutline className="cart-icon" />
         </div>
       </div>
     </NavbarContainer>

@@ -11,7 +11,6 @@ function DiscountCard() {
           <br />
           {t("home.article")}
         </h1>
-        <button>{t("home.buyNow")}</button>
       </aside>
       <figure>
         <img

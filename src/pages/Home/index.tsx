@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { APIDummy } from "../../services/apiURL";
-import { Card } from "../../components/Card";
+import { Cards } from "../../components/Cards";
 import { DiscountCard } from "../../components/DiscountCard";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { saveProducts } from "../../redux/slices/productsDataSlices";
@@ -12,9 +12,9 @@ function Home() {
   useEffect(() => {
     const getAllProducts = async () => {
       try {
-        if (category === "/") {
-          const response = await fetch(APIDummy);
-          const data = await response.json();
+        const response = await fetch(APIDummy);
+        const data = await response.json();
+        if (data.products.length && category === "/") {
           dispatch(saveProducts(data.products));
         } else {
           const response = await fetch(APIDummy + category);
@@ -31,7 +31,7 @@ function Home() {
   return (
     <>
       <DiscountCard />
-      <Card />
+      <Cards />
     </>
   );
 }

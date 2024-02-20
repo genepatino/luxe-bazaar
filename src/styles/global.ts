@@ -10,16 +10,30 @@ export const colors = {
   gray: "#b9afaf"
 };
 
-export const fonts = {
-  primary: 'Space Grotesk'
-}
 
 export const GlobalStyle = createGlobalStyle`
+
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color:white;
+    border-radius: 5px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background-color:white;
+    border-radius: 5px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 5px;
+  }
+
   body{
     background-color: white;
     max-width: 1400px;
     margin: 0 auto;
-    font-family: ${fonts.primary}, sans-serif;
   };
 
   html{

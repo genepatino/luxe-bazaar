@@ -10,7 +10,7 @@ export const CardContainer = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
 `;
 
-export const Cards = styled.div`
+export const ProductCard = styled.div`
   width: 200px;
 
   figure {
@@ -19,7 +19,13 @@ export const Cards = styled.div`
     margin: 0;
     position: relative;
     border-radius: 8px;
-    box-shadow: 0px 0px 3px 0px;
+    border: 2px solid ${colors.lightgray};
+    //transition: all 0.3s ease;
+
+    &:hover {
+      //width: 210px;
+      //height: 190px;
+    }
 
     img {
       width: 100%;
@@ -27,6 +33,7 @@ export const Cards = styled.div`
       object-fit: contain;
       border-radius: 8px;
     }
+
     div {
       position: absolute;
       width: 26px;
@@ -57,7 +64,7 @@ export const Cards = styled.div`
 
     p {
       margin: 0;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
 
     .title-product {
@@ -73,27 +80,34 @@ export const Cards = styled.div`
         font-size: 1.4rem;
         font-weight: bold;
       }
+
+      p:nth-child(1)::first-letter {
+        text-transform: uppercase;
+      }
     }
     .description {
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
     }
-    button {
-      width: 60%;
-      background-color: white;
-      border: 2px solid ${colors.gray};
-      border-radius: 22px;
-      padding: 6px;
-      cursor: pointer;
-      color: black;
-      font-size: 1.4rem;
+  }
+`;
 
-      &:hover {
-        background-color: ${colors.buttongreen};
-        color: white;
-        border: 2px solid #a8cea8b3;
-      }
-    }
+export const Button = styled.button<{ $active?: boolean }>`
+  width: 60%;
+  background-color: ${(props) =>
+    props.$active ? `${colors.green}` : "#ffffff"};
+  border: ${(props) =>
+    props.$active ? "2px solid #a8cea8b3" : `2px solid ${colors.gray}`};
+  border-radius: 22px;
+  padding: 6px;
+  cursor: pointer;
+  color: ${(props) => (props.$active ? "#ffffff" : "#000000")};
+  font-size: 1.4rem;
+
+  &:hover {
+    background-color: ${colors.buttongreen};
+    color: white;
+    border: 2px solid #a8cea8b3;
   }
 `;

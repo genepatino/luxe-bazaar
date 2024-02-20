@@ -21,22 +21,6 @@ export const DiscountContainer = styled.section`
       color: ${colors.green};
       margin: 0;
     }
-
-    button {
-      background-color: #335339;
-      padding: 12px 20px;
-      border-radius: 22px;
-      border: none;
-      cursor: pointer;
-      color: white;
-      font-size: 1.6rem;
-      transition: all 0.12s linear;
-
-      &:hover {
-        border: 3px solid #a8cea8b3;
-        background-color: ${colors.green};
-      }
-    }
   }
 
   figure {

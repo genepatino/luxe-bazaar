@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, fonts } from "../../styles/global";
+import { colors } from "../../styles/global";
 
 export const NavbarContainer = styled.nav`
   margin-top: 4px;
@@ -99,10 +99,6 @@ export const SearchInput = styled.input`
   border-radius: 30px;
   font-size: 1.4rem;
   transition: 0.2s;
-
-  &::placeholder {
-    font-family: ${fonts.primary};
-  }
 
   &:focus {
     outline: none;
