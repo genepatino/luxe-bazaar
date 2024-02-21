@@ -30,6 +30,12 @@ export const GlobalStyle = createGlobalStyle`
     border-radius: 5px;
   }
 
+  *{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  
   body{
     background-color: white;
     max-width: 1400px;

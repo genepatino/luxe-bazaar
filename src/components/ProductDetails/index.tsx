@@ -92,6 +92,7 @@ function ProductDetails() {
                   </p>
                 </div>
                 <Button
+                  $active={selectedProduct}
                   disabled={selectedProduct}
                   onClick={() => handleClick(foundProduct)}
                 >

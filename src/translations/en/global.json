@@ -5,7 +5,6 @@
       "groceries": "Groceries",
       "fragrances": "Fragrances",
       "home": "Home",
-      "jewellery": "Jewellery",
       "skincare": "Skincare",
       "laptops": "Laptops",
       "electronics": "Electronics",
@@ -27,5 +26,8 @@
     "return": "Return Delivery",
     "delivery": "Enter your postal code for Delivery Availability",
     "return-delivery": "Free 30 days Delivery Returns"
+  },
+  "shoppingCart":{
+    "buy-up": "Buy up"
   }
 }

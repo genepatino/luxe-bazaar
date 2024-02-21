@@ -41,8 +41,7 @@ export const ProductImage = styled.figure`
   background-color: ${colors.lightgray};
   img {
     border-radius: 24px;
-    width: 80%;
-    height: 80%;
+    width: 70%;
     object-fit: contain;
   }
 `;
@@ -60,6 +59,10 @@ export const Details = styled.section`
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    p::first-letter {
+      text-transform: uppercase;
+    }
 
     p:nth-child(1) {
       font-size: 2.4rem;
@@ -132,22 +135,23 @@ export const Details = styled.section`
     }
   }
 `;
-export const Button = styled.button`
+export const Button = styled.button<{ $active?: boolean }>`
   height: 42px;
-  //background-color: white;
-  background-color: ${colors.green};
+  background-color: ${(props) =>
+    props.$active ? `${colors.green}` : "#ffffff"};
+  border: ${(props) =>
+    props.$active ? "2px solid #a8cea8b3" : `2px solid ${colors.lightgray}`};
   padding: 10px 20px;
   border-radius: 22px;
-  border: none;
-  //border: 2px solid ${colors.gray};
   cursor: pointer;
-  color: white;
+  color: ${(props) => (props.$active ? "#ffffff" : "#000000")};
   font-size: 1.6rem;
   transition: all 0.12s linear;
 
   &:hover {
-    background-color: #304a35;
-    //color: white;
+    background-color: ${colors.green};
+    color: white;
+    border: 2px solid #a8cea8b3;
   }
 `;
 

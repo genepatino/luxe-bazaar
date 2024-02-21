@@ -5,7 +5,6 @@
       "groceries": "Comestibles",
       "fragrances": "Fragancias",
       "home": "Hogar",
-      "jewellery": "Joyas",
       "skincare": "Cuidado de la piel",
       "laptops": "Portátiles",
       "smartphones": "Celulares",
@@ -26,5 +25,8 @@
     "return": "Entrega de devolución",
     "delivery": "Ingrese su código postal para disponibilidad de entrega",
     "return-delivery": "Devoluciones con entrega gratuita en 30 días"
+  },
+  "shoppingCart":{
+    "buy-up": "Comprar"
   }
 }

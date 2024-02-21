@@ -6,22 +6,12 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Define the initial state using that type
 const initialState = {
-  products: [
-    {
-      id: 0,
-      title: "",
-      description: "",
-      price: "",
-      category: "",
-      rating: 0,
-      stock: 0,
-      brand: "",
-      images: [],
-    }],
+  products: [],
   esLangActive: false,
   category: "",
   searchProduct: "",
   shoppingCartProducts: [],
+  shoppingCartPanel: false,
 }
 
 export const ProductsDataSlice = createSlice({
@@ -43,10 +33,17 @@ export const ProductsDataSlice = createSlice({
     setShoppingCartProducts: (state, action) => {
       state.shoppingCartProducts.push(action.payload)
     },
+    updateShoppingCartProduct: (state, action) => {
+      const findIndexProduct = state.shoppingCartProducts.findIndex((item) => item.id === action.payload.id)
+      state.shoppingCartProducts.splice(findIndexProduct, 1, action.payload)
+    },
+    showShoppingCartPanel: (state, action) => {
+      state.shoppingCartPanel = action.payload
+    },
   },
 })
 
 
 
-export const { saveProducts, changeEsToEn, setProductsByCategory, setSearchProduct, setShoppingCartProducts } = ProductsDataSlice.actions
+export const { saveProducts, changeEsToEn, setProductsByCategory, setSearchProduct, setShoppingCartProducts, updateShoppingCartProduct, showShoppingCartPanel } = ProductsDataSlice.actions
 export default ProductsDataSlice.reducer

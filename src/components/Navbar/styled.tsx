@@ -1,12 +1,15 @@
 import styled from "styled-components";
 import { colors } from "../../styles/global";
 
-export const NavbarContainer = styled.nav`
+export const Container = styled.section`
+  display: flex;
+  flex-direction: column;
   margin-top: 4px;
   padding: 0px 60px 0 26px;
+`;
+export const NavbarContainer = styled.nav`
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 40px;
   font-weight: bold;
 
   .container {
@@ -56,14 +59,14 @@ export const NavbarContainer = styled.nav`
   }
 
   .rigth {
-    gap: 40px;
+    gap: 20px;
     justify-content: end;
     cursor: pointer;
 
     .search-icon {
       position: absolute;
       top: 6px;
-      right: -10px;
+      right: 10px;
       font-size: 2rem;
       color: gray;
     }
@@ -73,11 +76,12 @@ export const NavbarContainer = styled.nav`
       font-size: 1.6rem;
       gap: 2px;
 
-      &:hover {
-        text-decoration: underline;
-        text-underline-offset: 4px;
+      span:nth-child(1) {
+        &:hover {
+          text-decoration: underline;
+          text-underline-offset: 4px;
+        }
       }
-
       .cart-icon {
         font-size: 1.8rem;
       }
@@ -103,4 +107,10 @@ export const SearchInput = styled.input`
   &:focus {
     outline: none;
   }
+`;
+
+export const ProductsPanelContainer = styled.section`
+  position: relative;
+  display: flex;
+  justify-content: end;
 `;
