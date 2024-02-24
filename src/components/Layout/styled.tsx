@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const LayoutContainer = styled.div`
-  /* width: 100vw;
-  min-height: 100dvh; */
+  .fixed {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 2;
+  }
 `;

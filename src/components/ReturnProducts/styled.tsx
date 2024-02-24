@@ -20,12 +20,6 @@ export const ProductCard = styled.div`
     position: relative;
     border-radius: 8px;
     border: 2px solid ${colors.lightgray};
-    //transition: all 0.3s ease;
-
-    &:hover {
-      //width: 210px;
-      //height: 190px;
-    }
 
     img {
       width: 100%;
@@ -94,21 +88,21 @@ export const ProductCard = styled.div`
 `;
 
 export const Button = styled.button<{ $active?: boolean }>`
-  width: 140px;
+  width: 100px;
   background-color: ${(props) =>
-    props.$active ? `${colors.green}` : "#ffffff"};
+    props.$active ? "#dedede" : `${colors.green}`};
   border: ${(props) =>
-    props.$active ? "2px solid #a8cea8b3" : `2px solid ${colors.lightgray}`};
+    props.$active ? `2px solid #adb2adb3` : "2px solid #a8cea8b3"};
   border-radius: 22px;
   padding: 6px;
-  cursor: pointer;
-  color: ${(props) => (props.$active ? "#ffffff" : "#000000")};
+  cursor: ${(props) => (props.$active ? "not-allowed" : "pointer")};
+  color: ${(props) => (props.$active ? "#000000" : "#ffffff")};
   font-size: 1.4rem;
   transition: all 0.12s linear;
 
   &:hover {
-    background-color: ${colors.green};
-    color: white;
-    border: 2px solid #a8cea8b3;
+    background-color: #dedede;
+    border: 2px solid #adb2adb3;
+    color: black;
   }
 `;

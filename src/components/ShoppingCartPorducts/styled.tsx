@@ -3,11 +3,11 @@ import { colors } from "../../styles/global";
 
 export const ShoppingContainer = styled.section<{ $display?: boolean }>`
   width: 400px;
+  height: 480px;
   display: ${(props) => (props.$display ? "flex" : "none")};
-  gap: 14px;
   flex-direction: column;
   background: white;
-  padding: 30px;
+  padding: 20px;
   border-radius: 14px;
   position: absolute;
   border: 1px solid ${colors.gray};
@@ -18,22 +18,40 @@ export const ShoppingContainer = styled.section<{ $display?: boolean }>`
     right: 7px;
     top: 6px;
     font-size: 3rem;
-    color: #00000059;
+    color: #00000036;
     transition: font-size 0.3s ease;
+    cursor: pointer;
 
     &:hover {
       font-size: 3.4rem;
     }
   }
+
+  .list-products-details {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    height: 372px;
+    padding: 0 20px;
+    overflow-y: auto;
+    margin: 22px 0;
+  }
 `;
 
 export const ShoppingCartDetailsContainer = styled.div`
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-columns: 0.2fr 3fr 1fr 1fr;
   align-items: center;
   gap: 10px;
   padding-bottom: 8px;
   border-bottom: 1px solid ${colors.lightgray};
+
+  .iconDeleteProduct {
+    font-size: 2.2rem;
+    color: #00000057;
+    transition: font-size 0.3s ease;
+    cursor: pointer;
+  }
 
   div {
     display: flex;
@@ -50,8 +68,8 @@ export const ShoppingCartDetailsContainer = styled.div`
   }
 
   img {
-    width: 60px;
-    height: 54px;
+    width: 56px;
+    height: 48px;
     object-fit: contain;
     border-radius: 10px;
   }
@@ -70,6 +88,7 @@ export const ShoppingCartDetailsContainer = styled.div`
     }
 
     .button {
+      user-select: none;
       cursor: pointer;
       transition: font-size 0.3s ease;
 
@@ -88,6 +107,7 @@ export const TotalButton = styled.div`
   div {
     display: flex;
     gap: 20px;
+    font-weight: bold;
     font-size: 1.6rem;
   }
 `;

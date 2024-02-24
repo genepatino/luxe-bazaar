@@ -1,9 +1,11 @@
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
+  deleteProduct,
   showShoppingCartPanel,
   updateShoppingCartProduct,
 } from "../../redux/slices/productsDataSlices";
 import { IoCloseCircleSharp } from "react-icons/io5";
+import { AiFillDelete } from "react-icons/ai";
 import {
   ShoppingCartDetailsContainer,
   ShoppingContainer,
@@ -12,6 +14,8 @@ import {
 import { Button } from "../ReturnProducts/styled";
 import { totalProductsPrice } from "../../utils";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { IShoppingCart } from "../../redux/types";
 
 function ShoppingCartPorducts() {
   const [t] = useTranslation("global");
@@ -26,7 +30,7 @@ function ShoppingCartPorducts() {
 
   const dispatch = useAppDispatch();
 
-  const decrease = (product) => {
+  const decrease = (product: IShoppingCart) => {
     const newProduct = {
       ...product,
       quantity: product.quantity > 1 ? product.quantity - 1 : product.quantity,
@@ -34,9 +38,13 @@ function ShoppingCartPorducts() {
     dispatch(updateShoppingCartProduct(newProduct));
   };
 
-  const increase = (product) => {
+  const increase = (product: IShoppingCart) => {
     const newProduct = { ...product, quantity: product.quantity + 1 };
     dispatch(updateShoppingCartProduct(newProduct));
+  };
+
+  const deleteProductFromCart = (product: IShoppingCart) => {
+    dispatch(deleteProduct(product));
   };
 
   const closeShoppingCart = () => {
@@ -46,29 +54,39 @@ function ShoppingCartPorducts() {
   return (
     <ShoppingContainer $display={shoppingCartPanel}>
       <IoCloseCircleSharp className="icon-close" onClick={closeShoppingCart} />
-      {shoppingCartProducts.map((product) => (
-        <ShoppingCartDetailsContainer key={product.id}>
-          <div>
-            <img src={product.images[0]} alt={product.title} />
-            <span>{product.title}</span>
-          </div>
-          <div className="quantity">
-            <p className="button" onClick={() => decrease(product)}>
-              -
-            </p>
-            <p>{product.quantity}</p>
-            <p className="button" onClick={() => increase(product)}>
-              +
-            </p>
-          </div>
-          <span>{product.price}$</span>
-        </ShoppingCartDetailsContainer>
-      ))}
+      <div className="list-products-details">
+        {shoppingCartProducts.map((product: IShoppingCart) => (
+          <ShoppingCartDetailsContainer key={product.id}>
+            <AiFillDelete
+              className="iconDeleteProduct"
+              onClick={() => deleteProductFromCart(product)}
+            />
+            <div>
+              <img src={product.images[0]} alt={product.title} />
+              <span>{product.title}</span>
+            </div>
+            <div className="quantity">
+              <p className="button" onClick={() => decrease(product)}>
+                -
+              </p>
+              <p>{product.quantity}</p>
+              <p className="button" onClick={() => increase(product)}>
+                +
+              </p>
+            </div>
+            <span>{product.price * product.quantity}$</span>
+          </ShoppingCartDetailsContainer>
+        ))}
+      </div>
       <TotalButton>
-        <Button>{t("shoppingCart.buy-up")}</Button>
+        <Link to={"/order-summary"}>
+          <Button onClick={() => dispatch(showShoppingCartPanel(false))}>
+            {t("shoppingCart.buy-up")}
+          </Button>
+        </Link>
         <div>
           <span>Total:</span>
-          <span>{totalProductsPrice(shoppingCartProducts)}</span>
+          <span>{totalProductsPrice(shoppingCartProducts)}$</span>
         </div>
       </TotalButton>
     </ShoppingContainer>

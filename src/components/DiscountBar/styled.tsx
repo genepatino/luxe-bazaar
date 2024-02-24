@@ -27,12 +27,12 @@ export const DiscountBarContainer = styled.div<{ checked?: boolean }>`
   }
 
   .iconLanguageES {
-    top: 3px;
-    left: 5px;
+    top: 4px;
+    left: 4px;
   }
 
   .iconLanguageEN {
-    top: 3px;
-    right: 5px;
+    top: 4px;
+    right: 4px;
   }
 `;

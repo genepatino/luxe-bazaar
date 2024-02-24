@@ -2,9 +2,8 @@ import styled from "styled-components";
 import { colors } from "../../styles/global";
 
 export const MainCategory = styled.header`
-  margin-top: 20px;
+  margin-top: 6px;
   padding: 0 60px;
-  border-top: 2px solid ${colors.lightgray};
   span {
     display: inline-block;
     margin: 40px 8px 40px 0;
@@ -40,8 +39,8 @@ export const ProductImage = styled.figure`
   border-radius: 24px;
   background-color: ${colors.lightgray};
   img {
-    border-radius: 24px;
-    width: 70%;
+    width: 490px;
+    height: 480px;
     object-fit: contain;
   }
 `;
@@ -82,7 +81,7 @@ export const Details = styled.section`
 
       .icon-rating {
         font-size: 1.6rem;
-        color: #dc5f05; // #0eb52d;
+        color: #dc5f05;
       }
     }
     span {
@@ -124,6 +123,7 @@ export const Details = styled.section`
       }
 
       .button {
+        user-select: none;
         cursor: pointer;
         padding: 20px;
         transition: font-size 0.3s ease;
@@ -135,23 +135,24 @@ export const Details = styled.section`
     }
   }
 `;
-export const Button = styled.button<{ $active?: boolean }>`
+export const Button = styled.button<{ $active?: boolean; $width?: number }>`
+  width: ${(props) => (props.$width ? `${props.$width}px` : "140px")};
   height: 42px;
   background-color: ${(props) =>
-    props.$active ? `${colors.green}` : "#ffffff"};
+    props.$active ? "#dedede" : `${colors.green}`};
   border: ${(props) =>
-    props.$active ? "2px solid #a8cea8b3" : `2px solid ${colors.lightgray}`};
+    props.$active ? `2px solid #adb2adb3` : "2px solid #a8cea8b3"};
   padding: 10px 20px;
   border-radius: 22px;
-  cursor: pointer;
-  color: ${(props) => (props.$active ? "#ffffff" : "#000000")};
+  cursor: ${(props) => (props.$active ? "not-allowed" : "pointer")};
+  color: ${(props) => (props.$active ? "#000000" : "#ffffff")};
   font-size: 1.6rem;
   transition: all 0.12s linear;
 
   &:hover {
-    background-color: ${colors.green};
-    color: white;
-    border: 2px solid #a8cea8b3;
+    background-color: #dedede;
+    border: 2px solid #adb2adb3;
+    color: black;
   }
 `;
 

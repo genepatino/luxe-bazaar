@@ -8,9 +8,10 @@ export const Container = styled.section`
   padding: 0px 60px 0 26px;
 `;
 export const NavbarContainer = styled.nav`
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
+  justify-content: space-between;
   font-weight: bold;
+  flex-wrap: wrap;
 
   .container {
     display: flex;
@@ -49,7 +50,9 @@ export const NavbarContainer = styled.nav`
       }
 
       .active {
-        color: gray;
+        color: ${colors.gray};
+        text-decoration: underline;
+        text-underline-offset: 4px;
       }
     }
 
@@ -62,15 +65,30 @@ export const NavbarContainer = styled.nav`
     gap: 20px;
     justify-content: end;
     cursor: pointer;
+    padding-left: 24px;
 
     .search-icon {
       position: absolute;
       top: 6px;
-      right: 10px;
+      right: 12px;
       font-size: 2rem;
       color: gray;
     }
 
+    a {
+      text-decoration: none;
+      color: black;
+
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+    }
+    .active {
+      color: ${colors.gray};
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
     div {
       display: flex;
       font-size: 1.6rem;
@@ -88,7 +106,7 @@ export const NavbarContainer = styled.nav`
     }
 
     form {
-      width: 100%;
+      width: 300px;
       position: relative;
     }
   }
