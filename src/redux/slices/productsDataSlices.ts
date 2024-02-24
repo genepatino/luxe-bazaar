@@ -32,7 +32,7 @@ export const ProductsDataSlice = createSlice({
       state.searchProduct = action.payload
     },
     setShoppingCartProducts: (state, action: PayloadAction<IShoppingCartProduct>) => {
-      state.shoppingCartProducts = /* action.payload  */[...state.shoppingCartProducts, action.payload]
+      state.shoppingCartProducts = [...state.shoppingCartProducts, action.payload]
     },
     updateShoppingCartProduct: (state, action: PayloadAction<IShoppingCartProduct>) => {
       const findIndexProduct = state.shoppingCartProducts.findIndex((item) => item.id === action.payload.id)
