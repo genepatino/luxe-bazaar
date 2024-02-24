@@ -13,6 +13,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
   setProductsByCategory,
   setSearchProduct,
+  showShoppingCartPanel,
 } from "../../redux/slices/productsDataSlices";
 import { ShoppingCartPorducts } from "../ShoppingCartPorducts";
 
@@ -67,10 +68,16 @@ function Navbar() {
             />
             <FiSearch className="search-icon" />
           </form>
-          <div>
-            <span>{t("layout.navbar.shopCart")}</span>
-            <IoCartOutline className="cart-icon" />
-          </div>
+          <NavLink
+            onClick={() => dispatch(showShoppingCartPanel(false))}
+            to={"/order-summary"}
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
+            <div>
+              <span>{t("layout.navbar.shopCart")}</span>
+              <IoCartOutline className="cart-icon" />
+            </div>
+          </NavLink>
         </div>
       </NavbarContainer>
       <ProductsPanelContainer>

@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { APIDummy } from "../../services/apiURL";
-import { Cards } from "../../components/Cards";
+import { Products } from "../../components/Products";
 import { DiscountCard } from "../../components/DiscountCard";
 import { useAppDispatch } from "../../redux/hooks";
-import { saveProducts } from "../../redux/slices/productsDataSlices";
+import { saveProducts, setLoader } from "../../redux/slices/productsDataSlices";
 
 function Home() {
   const dispatch = useAppDispatch();
@@ -15,6 +15,7 @@ function Home() {
         const data = await response.json();
         if (data.products.length > 0) {
           dispatch(saveProducts(data.products));
+          dispatch(setLoader(false));
         } else {
           console.log("Tenemos problemas con la petición");
         }
@@ -28,7 +29,7 @@ function Home() {
   return (
     <>
       <DiscountCard />
-      <Cards />
+      <Products />
     </>
   );
 }

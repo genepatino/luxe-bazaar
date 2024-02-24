@@ -5,35 +5,33 @@ import {
   showShoppingCartPanel,
 } from "../../redux/slices/productsDataSlices";
 import { Button, ProductCard } from "./styled";
-import { FaHeart } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import { IProduct, IShoppingCartProduct } from "../../redux/types";
 
-function ReturnProducts({ arr }) {
+function ReturnProducts({ products }: { products: IProduct[] }) {
   const [t] = useTranslation("global");
   const shoppingCartProducts = useAppSelector(
     (state) => state.ProductsData.shoppingCartProducts
   );
   const dispatch = useAppDispatch();
 
-  const handleClick = (item: object) => {
+  const addToCart = (item: IProduct) => {
     const newProduct = { ...item, quantity: 1 };
     dispatch(setShoppingCartProducts(newProduct));
     dispatch(showShoppingCartPanel(true));
   };
 
-  return arr.map((item) => {
+  return products.map((item: IProduct) => {
     let selectedProduct = false;
-    shoppingCartProducts.some((product) =>
-      product.id === item.id ? (selectedProduct = true) : undefined
+    shoppingCartProducts.some(
+      (product: IShoppingCartProduct) =>
+        (selectedProduct = product.id === item.id)
     );
     return (
       <ProductCard key={item.id}>
         <Link to={`/product/${item.id}`}>
-          <figure>
+          <figure onClick={() => dispatch(showShoppingCartPanel(false))}>
             <img src={item.images[0]} alt={item.title} />
-            <div>
-              <FaHeart className="heart-icon" />
-            </div>
           </figure>
         </Link>
         <div className="description-container">
@@ -45,7 +43,7 @@ function ReturnProducts({ arr }) {
           <Button
             $active={selectedProduct}
             disabled={selectedProduct}
-            onClick={() => handleClick(item)}
+            onClick={() => addToCart(item)}
           >
             {t("home.add")}
           </Button>

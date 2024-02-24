@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../styles/global";
 
 export const DiscountContainer = styled.section`
-  margin-top: 20px;
+  margin-top: 6px;
   padding: 0 60px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -12,7 +12,7 @@ export const DiscountContainer = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: baseline;
-    background-color: #f2f3f7; //#e0e1e5; //#f2f3f7
+    background-color: #f2f3f7;
     padding-left: 60px;
     gap: 14px;
 

@@ -13,10 +13,16 @@ import {
   Button,
 } from "./styled";
 import { useTranslation } from "react-i18next";
-import { setShoppingCartProducts } from "../../redux/slices/productsDataSlices";
+import {
+  setShoppingCartProducts,
+  showShoppingCartPanel,
+  updateShoppingCartProduct,
+} from "../../redux/slices/productsDataSlices";
+import { IProduct } from "../../redux/types";
 
 function ProductDetails() {
   const [t] = useTranslation("global");
+  const [selectedProduct, setSelectedProduct] = useState(false);
   const { id } = useParams();
   const numberID = Number(id);
   const [quantity, setQuantity] = useState<number>(1);
@@ -34,9 +40,19 @@ function ProductDetails() {
     ));
   };
 
-  const handleClick = (item: object) => {
+  const handleClick = (item: IProduct) => {
+    const findIndexProduct = shoppingCartProducts.findIndex(
+      (product) => product.id === item.id
+    );
+
     const newProduct = { ...item, quantity: quantity };
-    dispatch(setShoppingCartProducts(newProduct));
+    if (findIndexProduct == -1) {
+      dispatch(setShoppingCartProducts(newProduct));
+    } else {
+      dispatch(updateShoppingCartProduct(newProduct));
+    }
+    setSelectedProduct(true);
+    dispatch(showShoppingCartPanel(true));
   };
 
   const decrease = () => {
@@ -48,12 +64,6 @@ function ProductDetails() {
   };
 
   const foundProduct = products.find((item) => item.id === numberID);
-
-  let selectedProduct = false;
-
-  shoppingCartProducts.some((product) =>
-    product.id === foundProduct?.id ? (selectedProduct = true) : undefined
-  );
 
   return (
     <>
@@ -93,7 +103,6 @@ function ProductDetails() {
                 </div>
                 <Button
                   $active={selectedProduct}
-                  disabled={selectedProduct}
                   onClick={() => handleClick(foundProduct)}
                 >
                   {t("home.add")}

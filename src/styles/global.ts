@@ -7,7 +7,8 @@ export const colors = {
   yellow: "#F4CE68",
   salmon: "#dfc1aa",
   ligthred: "#b03a3a",
-  gray: "#b9afaf"
+  gray: "#b9afaf",
+  blue: "#3483fa"
 };
 
 
@@ -26,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: gray;
+    background-color: ${colors.gray};
     border-radius: 5px;
   }
 
@@ -39,6 +40,7 @@ export const GlobalStyle = createGlobalStyle`
   body{
     background-color: white;
     max-width: 1400px;
+    min-width: 800px;
     margin: 0 auto;
   };
 

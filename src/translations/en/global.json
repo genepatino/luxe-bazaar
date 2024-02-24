@@ -28,6 +28,21 @@
     "return-delivery": "Free 30 days Delivery Returns"
   },
   "shoppingCart":{
-    "buy-up": "Buy up"
+    "buy-up": "Buy Up",
+    "keep-buying": "Keep buying",
+    "purchase": "Review Purchase and Shipping",
+    "delivery": "Delivery Information",
+    "name": "name:",
+    "address":"address:",
+    "city":"city:",
+    "country":"country:",
+    "email":"email:",
+    "order-summary": "Order Summary",
+    "no-categories": "No Categories",
+    "no-products": "There are no products to display",
+    "installments": "Up to 48 installments",
+    "shipping": "Shipping nationwide.",
+    "shipping-times": "Know the shipping times and methods.",
+    "calculate-arrives": "Calculate when it arrives"
   }
 }

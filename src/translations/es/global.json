@@ -27,6 +27,21 @@
     "return-delivery": "Devoluciones con entrega gratuita en 30 días"
   },
   "shoppingCart":{
-    "buy-up": "Comprar"
+    "buy-up": "Comprar",
+    "keep-buying": "Seguir Comprando",
+    "purchase": "Revisar Compra y Envío",
+    "delivery": "Información de Entrega",
+    "name": "nombre:",
+    "address":"dirección:",
+    "city":"ciudad:",
+    "country":"país:",
+    "email":"correo electrónico:",
+    "order-summary": "Resumen del Pedido",
+    "no-categories": "Sin Categorías",
+    "no-products": "No hay productos para mostrar",
+    "installments": "Hasta 48 cuotas",
+    "shipping": "Envío a nivel nacional.",
+    "shipping-times": "Conoce los tiempos y las formas de envío.",
+    "calculate-arrives": "Calcular cuando llega"
   }
 }

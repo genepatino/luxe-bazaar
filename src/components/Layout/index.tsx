@@ -12,8 +12,10 @@ function Layout({ children }: Props) {
 
   return (
     <LayoutContainer>
-      <DiscountBar />
-      <Navbar />
+      <div className="fixed">
+        <DiscountBar />
+        <Navbar />
+      </div>
       {children}
     </LayoutContainer>
   );
