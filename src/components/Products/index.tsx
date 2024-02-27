@@ -12,17 +12,24 @@ function Products() {
   );
 
   const returnProducts = () => {
-    if (searchProduct !== "") {
-      const filterByProductName = products.filter((item) =>
-        item.title.toLowerCase().includes(searchProduct.toLowerCase())
-      );
-      return <ReturnProducts products={filterByProductName} />;
-    } else if (category !== "/") {
+    if (category !== "/") {
       const filterByProductCategory = products.filter((item) =>
         item.category?.includes(category)
       );
+      if (searchProduct !== "") {
+        const filterByProductName = filterByProductCategory?.filter((item) =>
+          item.title.toLowerCase().includes(searchProduct.toLowerCase())
+        );
+        return <ReturnProducts products={filterByProductName} />;
+      }
       return <ReturnProducts products={filterByProductCategory} />;
     } else {
+      if (searchProduct !== "") {
+        const filterByProductName = products.filter((item) =>
+          item.title.toLowerCase().includes(searchProduct.toLowerCase())
+        );
+        return <ReturnProducts products={filterByProductName} />;
+      }
       return <ReturnProducts products={products} />;
     }
   };

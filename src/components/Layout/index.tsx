@@ -1,6 +1,5 @@
-import { useTranslation } from "react-i18next";
-import { DiscountBar } from "../DiscountBar/index";
-import { Navbar } from "../Navbar/index";
+import { DiscountBar } from "../DiscountBar";
+import { Navbar } from "../Navbar";
 import { LayoutContainer } from "./styled";
 
 type Props = {
@@ -8,8 +7,6 @@ type Props = {
 };
 
 function Layout({ children }: Props) {
-  const [t] = useTranslation("global");
-
   return (
     <LayoutContainer>
       <div className="fixed">
