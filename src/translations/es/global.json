@@ -1,0 +1,47 @@
+{
+  "layout": {
+    "discount-bar": "Obtenga 50% de descuento en artículos seleccionados | Compra ahora",
+    "navbar": {
+      "groceries": "Comestibles",
+      "fragrances": "Fragancias",
+      "home": "Hogar",
+      "skincare": "Cuidado de la piel",
+      "laptops": "Portátiles",
+      "smartphones": "Celulares",
+      "searchProduct": "Búscar producto",
+      "shopCart": "Carrito"
+    }
+  },
+  "home":{
+    "discount": "Obtenga hasta un 50% de descuento en",
+    "article": "Artículo seleccionado",
+    "buyNow": "Comprar",
+    "add": "Agregar"
+  },
+  "productDetails":{
+    "discount": "o 99.99/mes",
+    "suggested": "Pagos sugeridos con financiación especial a 6 meses",
+    "free": "Entrega Gratis",
+    "return": "Entrega de devolución",
+    "delivery": "Ingrese su código postal para disponibilidad de entrega",
+    "return-delivery": "Devoluciones con entrega gratuita en 30 días"
+  },
+  "shoppingCart":{
+    "buy-up": "Comprar",
+    "keep-buying": "Seguir Comprando",
+    "purchase": "Revisar Compra y Envío",
+    "delivery": "Información de Entrega",
+    "name": "nombre:",
+    "address":"dirección:",
+    "city":"ciudad:",
+    "country":"país:",
+    "email":"correo electrónico:",
+    "order-summary": "Resumen del Pedido",
+    "no-categories": "Sin Categorías",
+    "no-products": "No hay productos para mostrar",
+    "installments": "Hasta 48 cuotas",
+    "shipping": "Envío a nivel nacional.",
+    "shipping-times": "Conoce los tiempos y las formas de envío.",
+    "calculate-arrives": "Calcular cuando llega"
+  }
+}

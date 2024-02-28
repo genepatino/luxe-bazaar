@@ -1,0 +1,48 @@
+{
+  "layout":{
+    "discount-bar": "Get 50% off on selected items | Shop now",
+    "navbar": {
+      "groceries": "Groceries",
+      "fragrances": "Fragrances",
+      "home": "Home",
+      "skincare": "Skincare",
+      "laptops": "Laptops",
+      "electronics": "Electronics",
+      "smartphones": "Smartphones",
+      "searchProduct": "Search Product",
+      "shopCart": "ShopCart"
+    }
+  },
+  "home":{
+    "discount": "Grab Upto 50% Off On",
+    "article": "Selected Article",
+    "buyNow": "Buy Now",
+    "add": "Add to Cart"
+  },
+  "productDetails":{
+    "discount": "or 99.99/month",
+    "suggested": "Suggested payments with special 6-month financing",
+    "free": "Free Delivery",
+    "return": "Return Delivery",
+    "delivery": "Enter your postal code for Delivery Availability",
+    "return-delivery": "Free 30 days Delivery Returns"
+  },
+  "shoppingCart":{
+    "buy-up": "Buy Up",
+    "keep-buying": "Keep buying",
+    "purchase": "Review Purchase and Shipping",
+    "delivery": "Delivery Information",
+    "name": "name:",
+    "address":"address:",
+    "city":"city:",
+    "country":"country:",
+    "email":"email:",
+    "order-summary": "Order Summary",
+    "no-categories": "No Categories",
+    "no-products": "There are no products to display",
+    "installments": "Up to 48 installments",
+    "shipping": "Shipping nationwide.",
+    "shipping-times": "Know the shipping times and methods.",
+    "calculate-arrives": "Calculate when it arrives"
+  }
+}
