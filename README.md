@@ -16,11 +16,11 @@
 
 <p><em>Luxee Bazaar</em> is a desktop page. An e-commers in which you can view a list of products; filter them by category and title. You will also be able to see the details of a product when selecting it, increase or decrease its quantity, add it to the shopping cart and delete it from it.</p>
 
-<img src="src/images/productDetails.png" alt="product details" width="500" height="500"></img>
+<img src="src/images/productDetails.png" alt="product details"></img>
 
-<img src="src/images/shoppingcart.png" alt="shopping cart" width="500" height="500"></img>
+<img src="src/images/shoppingcart.png" alt="shopping cart"></img>
 
-<img src="src/images/ordersummary.png" alt="order summary" width="500" height="500"></img>
+<img src="src/images/ordersummary.png" alt="order summary"></img>
 
 <h2>Description</h2>
 
