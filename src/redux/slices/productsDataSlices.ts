@@ -7,6 +7,7 @@ import { IProduct, IProductsDataState, IShoppingCartProduct } from '../types'
 
 const initialState: IProductsDataState = {
   products: [],
+  productsByCategory: [],
   esLangActive: false,
   category: "",
   searchProduct: "",
@@ -21,6 +22,9 @@ export const ProductsDataSlice = createSlice({
   reducers: {
     saveProducts: (state, action: PayloadAction<IProduct[]>) => {
       state.products = action.payload
+    },
+    saveProductsByCategory: (state, action: PayloadAction<IProduct[]>) => {
+      state.productsByCategory = action.payload
     },
     changeEsToEn: (state) => {
       state.esLangActive = !state.esLangActive
@@ -53,5 +57,5 @@ export const ProductsDataSlice = createSlice({
 
 
 
-export const { saveProducts, changeEsToEn, setProductsByCategory, setSearchProduct, setShoppingCartProducts, updateShoppingCartProduct, showShoppingCartPanel, deleteProduct, setLoader } = ProductsDataSlice.actions
+export const { saveProducts, saveProductsByCategory, changeEsToEn, setProductsByCategory, setSearchProduct, setShoppingCartProducts, updateShoppingCartProduct, showShoppingCartPanel, deleteProduct, setLoader } = ProductsDataSlice.actions
 export default ProductsDataSlice.reducer

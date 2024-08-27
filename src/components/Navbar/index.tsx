@@ -11,25 +11,51 @@ import {
 import { useTranslation } from "react-i18next";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
+  saveProductsByCategory,
+  setLoader,
   setProductsByCategory,
   setSearchProduct,
   showShoppingCartPanel,
 } from "../../redux/slices/productsDataSlices";
 import { ShoppingCartPorducts } from "../ShoppingCartPorducts";
+import { APIDummy } from "../../services/apiURL";
 
 function Navbar() {
   const [t] = useTranslation("global");
   const product = useAppSelector((state) => state.ProductsData.searchProduct);
+
   const dispatch = useAppDispatch();
 
   const leftNavbarList = [
     { to: "/groceries", name: t("layout.navbar.groceries") },
     { to: "/home-decoration", name: t("layout.navbar.home") },
-    { to: "/skincare", name: t("layout.navbar.skincare") },
+    { to: "/beauty", name: t("layout.navbar.beauty") },
     { to: "/fragrances", name: t("layout.navbar.fragrances") },
     { to: "/smartphones", name: t("layout.navbar.smartphones") },
     { to: "/laptops", name: t("layout.navbar.laptops") },
   ];
+
+  function handleClick(item: string) {
+    handleProdudctsByCategory(item);
+    saveCategory(item);
+  }
+
+  const saveCategory = (item: string) => dispatch(setProductsByCategory(item));
+  const handleProdudctsByCategory = async (item: string) => {
+    try {
+      const response = await fetch(`${APIDummy}/category/${item}`);
+      const data = await response.json();
+      dispatch(setLoader(true));
+      if (data.products.length > 0) {
+        dispatch(saveProductsByCategory(data.products));
+        dispatch(setLoader(false));
+      } else {
+        console.log("Tenemos problemas con la petición");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Container>
@@ -48,9 +74,7 @@ function Navbar() {
                   className={({ isActive }) =>
                     isActive ? "active" : undefined
                   }
-                  onClick={() =>
-                    dispatch(setProductsByCategory(item.to.slice(1)))
-                  }
+                  onClick={() => handleClick(item.to.slice(1))}
                 >
                   {item.name}
                 </NavLink>

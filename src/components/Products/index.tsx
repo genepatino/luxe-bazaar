@@ -6,24 +6,16 @@ import { LoadingSkeleton } from "../LoadingSkeleton";
 function Products() {
   const products = useAppSelector((state) => state.ProductsData.products);
   const category = useAppSelector((state) => state.ProductsData.category);
+  const productByCategory = useAppSelector(
+    (state) => state.ProductsData.productsByCategory
+  );
   const loader = useAppSelector((state) => state.ProductsData.loader);
   const searchProduct = useAppSelector(
     (state) => state.ProductsData.searchProduct
   );
 
   const returnProducts = () => {
-    if (category !== "/") {
-      const filterByProductCategory = products.filter((item) =>
-        item.category?.includes(category)
-      );
-      if (searchProduct !== "") {
-        const filterByProductName = filterByProductCategory?.filter((item) =>
-          item.title.toLowerCase().includes(searchProduct.toLowerCase())
-        );
-        return <ReturnProducts products={filterByProductName} />;
-      }
-      return <ReturnProducts products={filterByProductCategory} />;
-    } else {
+    if (category === "" || category === "/") {
       if (searchProduct !== "") {
         const filterByProductName = products.filter((item) =>
           item.title.toLowerCase().includes(searchProduct.toLowerCase())
@@ -31,6 +23,16 @@ function Products() {
         return <ReturnProducts products={filterByProductName} />;
       }
       return <ReturnProducts products={products} />;
+    }
+
+    if (category !== "/") {
+      if (searchProduct !== "") {
+        const filterByProductName = productByCategory?.filter((item) =>
+          item.title.toLowerCase().includes(searchProduct.toLowerCase())
+        );
+        return <ReturnProducts products={filterByProductName} />;
+      }
+      return <ReturnProducts products={productByCategory} />;
     }
   };
 

@@ -1,5 +1,6 @@
 export interface IProductsDataState {
   products: IProduct[],
+  productsByCategory: IProduct[],
   esLangActive: boolean,
   category: string,
   searchProduct: string,
