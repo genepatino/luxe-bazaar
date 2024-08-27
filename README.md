@@ -12,9 +12,9 @@
    <img src="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7">
    <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white">
 </p>
-<h2>Introducción</h2>
+<h2>Introduction</h2>
 
-<p><em>Luxee Bazaar</em> es una desktop page. Una e-commers en la que podrás visualizar una lista de productos; filtrarlos por categoría y título. Podrás además, ver los detalles de un producto al seleccionarlo, aumentar o disminuir su cantidad, agregarlo al carrito de compras y eliminarlo de éste.</p>
+<p><em>Luxee Bazaar</em> is a desktop page. An e-commers in which you can view a list of products; filter them by category and title. You will also be able to see the details of a product when selecting it, increase or decrease its quantity, add it to the shopping cart and delete it from it.</p>
 
 <img src="src/images/productDetails.png" alt="product details"></img>
 
@@ -22,26 +22,25 @@
 
 <img src="src/images/ordersummary.png" alt="order summary"></img>
 
-<h2>Descripción</h2>
+<h2>Description</h2>
 
-<p><em>Luxee Bazaar</em> fue construida con Typescript y Redux Toolkit.</p>
-<p>Se implementó React Router Dom (para el manejo de rutas). Podrás visualizar la página principal <em>Home</em>, las <em>Categorías</em> y <em>Order summary</em>.</p>
+<p><em>Luxee Bazaar</em> was built with Typescript and Redux Toolkit.</p>
+<p>Implemented React Router Dom (for route management). You will be able to view the main page <em>Home</em>, the <em>Categories</em> and <em>Order summary</em>.</p>
 
-<p><em>Luxee Bazaar</em>, cuenta además con:</p>
+<p><em>Luxee Bazaar</em> also has:</p>
 <ul>
-  <li>Un loading Skeleton para simular el estado de carga mientras se muestra la lista de productos,</li>
-  <li>Un sistema de traducciones (i18next) EN/ES que podrás implementar haciendo uso de un switch</li>
+   <li>A loading skeleton to simulate the loading state while displaying the product list,</li>
+   <li>An en/es translation system (i18next) that you can implement using a switch</li>
 </ul>
 
 https://github.com/genepatino/luxe-bazaar/assets/62777013/4f2e0fc4-a135-4944-9b4b-7b61834dd259
 
-<p>A su derecha, en la sección About, encontrará el link de la aplicación.</p>
+<p>On your right, in the About section, you will find the link to the application.</p>
 
-<p><em>Gracias por mirar🌸</em></p>
+<p><em>Thank you for watching🌸</em></p>
 
-<h3>Créditos por diseño a:</h3>
+<h3>Credits for design to:</h3>
 <p>Musemind UI/UX Agency</p>
 
-<h3>Autora:
-</h3><p>Génesis Patiño</p>
+<h3>Author:</h3><p>Genesis Patiño</p>
 <img src="src/images/avatar.png" alt="avatar github genepatino" width="120" height="120"></img>
